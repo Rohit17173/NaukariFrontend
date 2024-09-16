@@ -1,0 +1,26 @@
+
+
+
+  <div class="container">
+    <div class="btn">
+      <button routerLink="/company">company</button>
+      
+      <button id="usr" routerLink="/register">user</button>
+      <!-- <button routerLink="/recruter/login">recruter</button> -->
+      </div>
+    <h3>Registration form</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" /><br />
+
+    <label for="username">Email:</label>
+    <input type="text" id="username" [(ngModel)]="username" /><br />
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" [(ngModel)]="password" /><br />
+
+    <label for="age">age:</label>
+    <input type="number" id="age" [(ngModel)]="age" /><br />
+
+    <button (click)="register()">Register</button>
+  </div>
+

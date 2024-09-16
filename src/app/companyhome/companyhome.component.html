@@ -1,0 +1,117 @@
+<!-- <button>a</button> -->
+<!-- <button></button>
+<button>view recriter</button>
+<button>view jobs</button> -->
+
+
+<app-comnavbar></app-comnavbar>
+
+<div class="main-content">
+  <div class="d-flex flex-column flex-shrink-0 p-3 sidebar">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Sidebar</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+              <a (click)="changeCat(0)" class="nav-link" aria-current="page">
+                 
+                  Home
+              </a>
+          </li>
+          <!-- <li>
+              <a href="#" class="nav-link text-white">
+                  Dashboard
+              </a>
+          </li> -->
+          <li>
+              <a (click)="changeCat(1)" class="nav-link text-white">
+                  Add Recruter
+              </a>
+          </li>
+          <li>
+              <a (click)="changeCat(3)" class="nav-link text-white">
+                  View Recruiter
+              </a>
+          </li>
+          <li>
+              <a (click)="changeCat(4)" class="nav-link text-white">
+                Add Jobs
+              </a>
+          </li>
+          <li>
+            <a (click)="changeCat(2)" class="nav-link text-white">
+              Search Candidates
+            </a>
+        </li>
+        <li>
+          <a (click)="changeCat(2)" class="nav-link text-white">
+            View Jobs
+          </a>
+      </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <!-- <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> -->
+              <strong>mdo</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="content">
+      <!-- <h1>Main Content</h1>
+      <p>Your main content goes here.</p> -->
+      <div class="card2">
+        <div class="buyer-container">
+          <div *ngIf="WhatToShow==0">
+            <app-comdashboard></app-comdashboard>
+          </div>
+          <div *ngIf="WhatToShow==1">
+            <app-addrecruter></app-addrecruter>
+          </div>
+          <div *ngIf="WhatToShow==2">
+            <app-addjob></app-addjob>
+          </div>
+          <div *ngIf="WhatToShow==3">
+            <app-viewrecruiter></app-viewrecruiter>
+          </div>
+          <div *ngIf="WhatToShow==4">
+            <app-addjob-recruter></app-addjob-recruter>
+          </div>
+        </div>
+      </div>
+      <!-- Add more content here -->
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+      Sidebar
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="position-sticky">
+          <div class="btn-group-vertical btn-block">
+            <button class="btn btn-primary mb-2" (click)="changeCat(1)">Add Recruiter</button>
+            <button class="btn btn-primary mb-2" (click)="changeCat(2)">Add Jobs</button>
+            <button class="btn btn-primary mb-2" (click)="changeCat(3)">View Recruiter</button>
+            <button class="btn btn-primary mb-2">Search Candidates</button>
+            <button class="btn btn-primary">View Jobs</button>
+          </div>
+        </div>
+      </nav>
+  
+      Main Content
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+      </main>
+    </div> -->
+  <!-- </div> -->
+  

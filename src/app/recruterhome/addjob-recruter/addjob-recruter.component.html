@@ -1,0 +1,46 @@
+<div class="container mt-5 col-lg-8">
+  <div class="card shadow-sm">
+    <div class="card-body ">
+      <h3 class="card-title mb-4">Job Details</h3>
+      
+      <div class="form-group mb-3">
+        <label for="name">Title:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="title">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" [(ngModel)]="description" rows="3"></textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="location">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="minsalary">Min Salary:</label>
+        <input type="number" class="form-control" id="minsalary" [(ngModel)]="minsalary">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="maxsalary">Max Salary:</label>
+        <input type="number" class="form-control" id="maxsalary" [(ngModel)]="maxsalary">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="maxsalary">Min Experience:</label>
+        <input type="number" class="form-control" id="maxsalary" [(ngModel)]="minexp">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="maxsalary">Max Experience:</label>
+        <input type="number" class="form-control" id="maxsalary" [(ngModel)]="maxexp">
+      </div>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-primary w-200" (click)="addjob()">Post</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

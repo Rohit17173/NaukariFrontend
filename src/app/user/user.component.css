@@ -1,0 +1,167 @@
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for subtle effect */
+    z-index: 1030; /* Ensure the navbar stays on top of other elements */
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Navbar Link Styling */
+.nav-link {
+    font-size: 1rem;
+    padding: 12px 20px;
+    color: #333;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+    color: #007bff;
+    font-weight: 600;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 12px;
+    }
+}
+
+/* Adjusting body margin for fixed navbar */
+body {
+    padding-top: 56px; /* Adjust according to the navbar height */
+}
+
+
+
+
+
+
+/* Sidebar Styles */
+#sidebar {
+    background-color: #f8f9fa;
+    height: 80vh;
+    padding: 0;
+    border-right: 1px solid #dee2e6;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+  }
+  
+  /* User Profile Styles */
+  .user-profile {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+    text-align: center; /* Center text horizontally */
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  /* Profile Image */
+  .user-profile img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* Ensure circular profile image */
+  }
+  
+  /* User Profile Text */
+  .user-profile h5 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+ 
+  .user-profile p {
+    margin: 0.25rem 0;
+  }
+  
+  /* Navigation Links */
+  .nav {
+    width: 100%; /* Full width to center items */
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .nav-link {
+    /* color: #007bff; */
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    display: block; /* Make each link a block element for vertical alignment */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .nav-link:hover {
+    background-color: #e9ecef;
+    color: #0056b3;
+  }
+  
+  .nav-link.active {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .nav-link.text-danger {
+    color: #dc3545;
+  }
+  
+  .nav-link.text-danger:hover {
+    color: #c82333;
+  }
+  
+  
+
+
+  /* Custom card styles */
+.custom-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Slight lift on hover */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

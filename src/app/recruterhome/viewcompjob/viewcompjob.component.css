@@ -1,0 +1,77 @@
+/* Job card container */
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Job title styling */
+.card-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Job description styling */
+.card-text {
+  font-size: 1em;
+  color: #666;
+}
+
+/* List group item styling */
+.list-group-item {
+  font-size: 1em;
+  color: #444;
+}
+
+/* Footer buttons */
+.card-footer {
+  background-color: transparent;
+  border-top: none;
+}
+
+.btn {
+  font-size: 0.9em;
+  padding: 8px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+}

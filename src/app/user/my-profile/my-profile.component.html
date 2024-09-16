@@ -1,0 +1,355 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Naukari</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/viewjob">Job Listings</a>
+          </li>
+          <li class="nav-item" routerLink="/user/appliedjob">
+            <a class="nav-link" >My Applications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mcontainer" *ngIf="whatTOShow==0">
+    <div class="profile-info">
+      <div class="personal">
+        <!-- <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic"> -->
+        <h2>{{user.name}}</h2>
+        <p class="info"><span class="label">Name:</span> {{user.name}}</p>
+        <p class="info">
+          <span class="label">Email:</span> {{user.email}}
+        </p>
+        <!-- <p class="info"><span class="label">Phone:</span> 9999999999</p> -->
+        
+      </div>
+      <hr />
+      <p class="info">
+        <span class="label">headline:</span> Highly motivated and experienced
+        software engineer with 5+ years of experience in developing scalable
+        and efficient software solutions. headline
+      </p>
+
+      <hr />
+
+      <h3>Personal Details</h3>
+      <div *ngIf="profile==null">
+        <!-- <button (click)="changeView(5)">edit</button> -->
+        <button (click)="changeView(5)">add</button>
+      </div>
+      <div class="educational" *ngIf="profile!=null">
+        
+        <p class="info">
+          <span class="label">mobile:</span> {{profile.mobile}}
+        </p>
+        <p class="info">
+          <span class="label">position:</span> {{profile.position}}
+        </p>
+
+        <p class="info">
+          <span class="label">skills:</span> {{profile.skills}}
+        </p>
+        <p class="info">
+          <span class="label">expectedCtc:</span> {{profile.expectedCtc}}
+        </p>
+        <p class="info">
+          <span class="label">currntCtc:</span> {{profile.currntCtc}}
+        </p>
+        <p class="info">
+          <span class="label">toalexp:</span> {{profile.toalexp}}
+        </p>
+        <p class="info">
+          <span class="label">location:</span> {{profile.location}}
+        </p>
+        <div>
+          <button (click)="changeView(6)">edit</button>
+          <!-- <button (click)="addProfile()">add</button> -->
+        </div>
+      </div>
+
+      <hr>
+      
+        <h3>Education</h3>
+        <div>
+          <button (click)="changeView(1)">add</button>
+        </div>
+        <div class="educational" *ngFor="let detail of education">
+        <p class="info">
+          <span class="label">Degree:</span> {{detail.degree}}
+        </p>
+        <p class="info">
+          <span class="label">College:</span> {{detail.college}}
+        </p>
+        <p class="info"><span class="label">Duration</span> {{detail.startDate | date:'yyyy'}} - {{detail.endtDate| date:'yyyy'}}</p>
+        <p class="info">
+          <span class="label">Marks:</span> {{detail.totalmarks}}
+        </p>
+        <p class="info">
+          <span class="label">location:</span> {{detail.location}}
+        </p>
+        <div>
+          <button (click)="editCollege(detail)" (click)="changeView(3)">edit</button>
+          <button (click)="deeteCollege(detail.id)">delete</button>
+        </div>
+      </div>
+      </div>
+      <hr />
+      <div class="skills">
+        <h3>Skills</h3>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>ReactJS</li>
+          <li>NodeJS</li>
+        </ul>
+      </div>
+      <hr />
+      <h3>Work Experience</h3>
+      <div>
+        <button (click)="changeView(2)">add</button>
+      </div>
+      <div class="experience" *ngFor="let detail of experience">
+        <p class="info">
+          <span class="label">Company:</span> {{detail.companyname}}
+        </p>
+        <p class="info">
+          <span class="label">Designation:</span> {{detail.position}}
+        </p>
+        <p class="info"><span class="label">Duration:</span> 2015-2018</p>
+        <p class="info">
+          <span class="label">Skills:</span> JavaScript
+        </p>
+        <div>
+          <button (click)="editCompany(detail)">edit</button>
+          <button (click)="deleteCompExp(detail.id)" >delete</button>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="education-form" *ngIf="whatTOShow==1">
+      <h2>Add Education Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">College:</label>
+          <input type="text" id="college" name="college" [(ngModel)]="college" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Degree:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="degree" required>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="startdate"  required>
+        </div>
+        <div class="form-group">
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="enddate"  required>
+        </div>
+        <div class="form-group">
+          <label for="totalMarks">Total Marks:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="marks"  step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="field">Field of college:</label>
+          <input type="text" id="field" name="field" [(ngModel)]="field" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" [(ngModel)]="location" required>
+        </div>
+        <button type="submit" (click)="addClg()">Submit</button>
+        <button type="submit" (click)="changeView(0)">cancel</button>
+      </form>
+    </div>
+
+
+    <div class="education-form" *ngIf="whatTOShow==2">
+      <h2>Add Company Experience</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">Company Name:</label>
+          <input type="text" id="college" name="college" [(ngModel)]="companyname" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Position:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="Position" required>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Joinig date Date:</label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="joiningdate"  required>
+        </div>
+        <div class="form-group">
+          <label for="endDate">leaving Date:</label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="leavingdate"  required>
+        </div>
+        
+        <button type="submit" (click)="addCompany()">Submit</button>
+        <button type="submit" (click)="changeView(0)">cancel</button>
+      </form>
+    </div>
+
+    <div class="education-form" *ngIf="whatTOShow==3">
+      <h2>Edit Education Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">College:</label>
+          <input type="text" id="college" name="college" [value]="obj.college" [(ngModel)]="obj.college" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Degree:</label>
+          <input type="text" id="degree" name="degree" [value]="obj.degree" [(ngModel)]="obj.degree" required>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" [value]="obj.startDate" [(ngModel)]="obj.startDate" required>
+        </div>
+        <div class="form-group">
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" name="endDate" [value]="obj.endtDate" [(ngModel)]="obj.endtDate" required>
+        </div>
+        <div class="form-group">
+          <label for="totalMarks">Total Marks:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [value]="obj.totalmarks" [(ngModel)]="obj.totalmarks"  step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="field">Field of college:</label>
+          <input type="text" id="field" name="field" [value]="obj.field" [(ngModel)]="obj.field" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" [value]="obj.location" [(ngModel)]="obj.location"  required>
+        </div>
+        <button type="submit" (click)="updateClg()">Submit</button>
+        <!-- <button type="submit" (click)="changeView(0)">cancel</button> -->
+      </form>
+    </div>
+
+    <div class="education-form" *ngIf="whatTOShow==4">
+      <h2>Add Company Experience</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">Company Name:</label>
+          <input type="text" id="college" name="college" [(ngModel)]="compObj.companyname" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Position:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="compObj.position" required>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Joinig date Date:</label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="compObj.joiningDate"  required>
+        </div>
+        <div class="form-group">
+          <label for="endDate">leaving Date:</label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="compObj.leavingdate"  required>
+        </div>
+        
+        <button type="submit" (click)="updateCompany()">Submit</button>
+        <button type="submit" (click)="changeView(0)">cancel</button>
+      </form>
+    </div>
+
+    <div class="education-form" *ngIf="whatTOShow==5">
+      <h2>Add Personal Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">Mobile:</label>
+          <input type="text" id="college" name="college" [(ngModel)]="mobile" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Position:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="profPosition" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Skills:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="Skills" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Headline:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="headline" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="totalMarks">Expected Ctc:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="expectedCtc"  step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="totalMarks">Current Ctc:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="currentCtc"  step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="totalMarks">Total Experience:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="totalExperience"  step="0.01" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" [(ngModel)]="profilelocation"  required>
+        </div>
+        <button type="submit" (click)="addProfile()">Submit</button>
+        <button type="submit" (click)="changeView(0)">cancel</button>
+      </form>
+    </div>
+
+
+    <div class="education-form" *ngIf="whatTOShow==6">
+      <h2>Add Personal Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="college">Mobile:</label>
+          <input type="text" id="college" name="college" [(ngModel)]="mobile" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Position:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="profile.position" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Skills:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="profile.skills" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Headline:</label>
+          <input type="text" id="degree" name="degree" [(ngModel)]="profile.headline" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="totalMarks">Expected Ctc:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="profile.expectedCtc"  step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="totalMarks">Current Ctc:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="profile.currntCtc"  step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="totalMarks">Total Experience:</label>
+          <input type="number" id="totalMarks" name="totalMarks" [(ngModel)]="profile.toalexp"  step="0.01" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" [(ngModel)]="profile.location"  required>
+        </div>
+        <button type="submit" (click)="updateProfile()">Submit</button>
+        <button type="submit" (click)="changeView(0)">cancel</button>
+      </form>
+    </div>
+    

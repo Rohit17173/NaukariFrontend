@@ -1,0 +1,133 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Naukari</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/viewjob">Job Listings</a>
+          </li>
+          <li class="nav-item" routerLink="/user/appliedjob">
+            <a class="nav-link" >My Applications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid m-3 mt-4 " >
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar ms-10">
+        <div class="position-sticky">
+          <!-- User Profile Section -->
+          <div class="user-profile p-4 bg-white shadow-sm mb-3">
+            <img src="https://via.placeholder.com/100" alt="User Photo" class="rounded-circle mb-2">
+            <h5 class="user-name">John Doe</h5>
+            <p class="user-company">Company: Tech Innovations</p>
+            <p class="user-position">Position: Software Engineer</p>
+            <button type="button" id="profile" class="btn btn-primary" routerLink="/user/profile"><b>My Profile</b></button>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/user/appliedjob">
+                  <i class="bi bi-briefcase"></i> My Applications
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/user/viewjob">
+                  <i class="bi bi-briefcase"></i> Jobs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-briefcase"></i> Companies
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/user/searchjob">
+                  <i class="bi bi-briefcase"></i> Search Jobs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-gear"></i> Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="#">
+                  <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Main content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+        <!-- Main content goes here -->
+        <div>
+            <div class="container mt-4">
+                <div class="row">
+                  <!-- Card 1 -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Total Applications</h5>
+                        <p class="card-text">150</p>
+                        <a routerLink="/user/appliedjob" class="btn btn-primary">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 2 -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Todays Jobs Posted</h5>
+                        <p class="card-text">25</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Card 3 -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Profile views</h5>
+                        <p class="card-text">8</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+        </div>
+
+        <!-- <button routerLink="/user/viewjob">viewjob</button>
+        <button routerLink="/user/appliedjob">Applied job</button>
+        <button routerLink="/user/searchjob">search job</button>
+       <button routerLink="/user/profile">My Profile</button> -->
+      </main>
+    </div>
+  </div>
+  
+  
+  
+  
+
+<!-- <button><a [routerLink]="['/user/viewjob']">view jobs</a></button> -->

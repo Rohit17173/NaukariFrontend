@@ -1,0 +1,35 @@
+<div class="education-form">
+    <h2>Edit Education Details</h2>
+    <form>
+      <div class="form-group">
+        <label for="college">College:</label>
+        <input type="text" id="college" name="college" value="rohit" required>
+      </div>
+      <div class="form-group">
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree"  required>
+      </div>
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+      </div>
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate"  required>
+      </div>
+      <div class="form-group">
+        <label for="totalMarks">Total Marks:</label>
+        <input type="number" id="totalMarks" name="totalMarks"   step="0.01" required>
+      </div>
+      <div class="form-group">
+        <label for="field">Field of college:</label>
+        <input type="text" id="field" name="field" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location"  required>
+      </div>
+      <button type="submit" (click)="addClg()">Submit</button>
+      <!-- <button type="submit" (click)="changeView(0)">cancel</button> -->
+    </form>
+  </div>

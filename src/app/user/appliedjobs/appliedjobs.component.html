@@ -1,0 +1,32 @@
+<div >
+    <div class="container mt-4 main">
+      <div class="row">
+        <div *ngFor="let job of list" class="col-md-12 mb-4">
+          <div class="job-card">
+            <div class="job-header">
+              <h3 class="job-title">{{ job.title }} </h3>
+            <!-- </div>
+            <div class="job-header"> -->
+              <h5 >{{ job.company }} </h5>
+            </div>
+            
+            <div class="job-body">
+              <p class="job-description">{{ job.description }}</p>
+              <p class="job-salary">Salary: {{ job.minsalary }} - {{ job.maxsalary }}</p>
+            </div>
+            <div class="job-footer">
+              <!-- <button class="btn btn-primary" (click)="applyjob(job.id)">Apply</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination Controls -->
+    <!-- <div class="pagination">
+      <button 
+        *ngFor="let page of pagesArray; let i = index" 
+        (click)="goToPage(i )">
+        {{ i + 1 }}
+      </button>
+    </div> -->
+  </div>

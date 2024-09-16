@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="btn">
+        <button id="cmp" routerLink="/company/login">company</button>
+        
+        <button  routerLink="/login">user</button>
+        <button routerLink="/recruter/login">recruter</button>
+        </div>
+    <h2>Company Login</h2>
+    <form  method="post">
+        <!-- <label for="username" >Username</label> -->
+        <input type="text" id="username" name="username" placeholder="Your username.." [(ngModel)]="username" required>
+<br>
+        <!-- <label for="password" >Password</label> -->
+        <input type="password" id="password" name="password" placeholder="Your password.." [(ngModel)]="password" required>
+        <br>
+        <button (click)="login()">Login</button>
+        <!-- <input type="submit" value="Login"> -->
+    </form>
+    <div class="register-link">
+        <p>If you are not registered, <a (click)="register()">register here</a>.</p>
+    </div>
+</div>

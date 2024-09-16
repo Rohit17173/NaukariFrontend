@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div *ngFor="let job of closedJob" class="row mb-4">
+        <div class="col-md-12">
+            <div class="card border-light shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ job.title }}</h5>
+                    <p class="card-text text-muted">{{ job.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Salary: {{ job.minsalary }} - {{ job.maxsalary }}</li>
+                </ul>
+                <div class="card-footer text-right">
+                    <button class="btn btn-outline-danger mr-2">Delete</button>
+                    <!-- <button class="btn btn-outline-warning mr-2" (click)="closePosition(job.id)">Close Position</button> -->
+                    <!-- <button class="btn btn-outline-primary" (click)="applicants(job.id)" (click)="changeCat(4)">View Applications</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
